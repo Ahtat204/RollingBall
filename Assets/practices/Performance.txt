@@ -1,0 +1,16 @@
+﻿* transform.position is a property, not just a field,each call internally involves a function call and memory copying (struct Vector3).
+   Repeated access to this in performance-critical methods like Update() or methods that might be called frequently (like GameOver()) can cause overhead, especially on mobile.
+
+
+** System.Math operates on double, which causes boxing/unboxing and float-to-double conversion, which is more expensive on some platforms (especially Android).
+   Mathf is optimized for Unity's float type.
+   
+   if Update function is not needed in a script , do not include it (even if it's empty ) , because Unity will call it every frame , which result in wasting unecessary ressources
+   
+   Event Subscription Without Unsubscription
+   Issue:
+   You’re subscribing to OnGameOver in Awake() but never unsubscribing.
+   Why it’s dangerous:
+   If this object is destroyed and recreated, you’ll get multiple subscriptions leading to duplicated effects and even memory leaks.
+   Fix:
+   Unsubscribe in OnDestroy():
