@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RollingBall
+namespace Scripts.Scripts
 {
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
@@ -18,7 +18,7 @@ namespace RollingBall
         [Space] [SerializeField] private AudioSource coinUpSound;
         [Space] [SerializeField] private AudioSource coinDownSound;
         [Space] [SerializeField] private Button jumpButton;
-        [SerializeField] [Range(100, 200)] private float jumHeight;
+        [SerializeField] [Range(0, 200)] private float jumHeight;
         private Rigidbody _rb;
         [Range(0, 300)] public float forwardSpeed;
         [Range(0, 100)] public float verticalSpeed;
@@ -41,5 +41,15 @@ namespace RollingBall
             jumpButton.onClick.AddListener(() => { _rb.AddForce(Vector3.up * jumHeight); });
             _rb.AddForce(Vector3.forward * forwardSpeed, ForceMode.Impulse);
         }
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Coin"))
+            {
+                coinUpSound.Play();
+                Destroy(collision.gameObject);
+            }
+        }
     }
+
+   
 }

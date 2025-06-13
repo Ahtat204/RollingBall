@@ -1,15 +1,16 @@
-using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace RollingBall
+namespace Scripts.Scripts
 {
     public class GameController : MonoBehaviour
     {
         public AudioSource soundobject;
         [SerializeField] private Button pause;
         [SerializeField] private GameObject pauseMenu;
+        [SerializeField] private GameObject roadPiece;
         [SerializeField] private Button resume;
         [SerializeField] private Button quit;
         [SerializeField] private Button restart;
@@ -25,6 +26,7 @@ namespace RollingBall
             pause.onClick.AddListener(() => { PauseGame(pauseMenu, _gameSound); });
             resume.onClick.AddListener(() => { ResumeGame(pauseMenu, _gameSound); });
             restart.onClick.AddListener(() => { Restart(); });
+           roadPiece.InstantiateRoadPieces(5);
         }
 
         private void PauseGame(GameObject menu, AudioSource gamesound)

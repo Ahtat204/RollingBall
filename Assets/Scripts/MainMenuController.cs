@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace RollingBall
+namespace Scripts.Scripts
 {
     public class MainMenuController : MonoBehaviour
     {
