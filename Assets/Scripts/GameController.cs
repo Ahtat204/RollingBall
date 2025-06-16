@@ -26,7 +26,7 @@ namespace Scripts.Scripts
             pause.onClick.AddListener(() => { PauseGame(pauseMenu, _gameSound); });
             resume.onClick.AddListener(() => { ResumeGame(pauseMenu, _gameSound); });
             restart.onClick.AddListener(() => { Restart(); });
-           roadPiece.InstantiateRoadPieces(5);
+            Instantiation.InstantiateRoadPieces(roadPiece, 20);
         }
 
         private void PauseGame(GameObject menu, AudioSource gamesound)

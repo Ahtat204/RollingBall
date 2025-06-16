@@ -7,31 +7,17 @@ namespace Scripts.Scripts
 {
     internal static class Instantiation
     {
-        public static async Task InstantiateRoadPieces(this GameObject piece, int count)
+        public static async Task InstantiateRoadPieces( this GameObject piece, int count)
         {
-            const float distance = -19.011f;
+            var distance = 294.4f;
             var position = piece.transform.position;
-            try
+            for (int i = 0; i < count; i++)
             {
-                for (var i = 0; i < count; i++)
-                {
-                    await Task.Delay(1000);
-                    var newPosition = position;
-                    var newPiece = Object.Instantiate(piece, newPosition, piece.transform.rotation);
-                    // Pause between spawns
-                }
-                await Task.Delay(1000);
+                var newPiece=Object.InstantiateAsync(piece
+                    , new Vector3(position.x,position.y,position.z+distance*i)
+                    , piece.transform.rotation);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                Debug.Log(e);
-            }
-            finally
-            {
-                throw new Exception("error occuried");
-            }
-            ;
+            await Task.Delay(1);
         }
     }
 }
