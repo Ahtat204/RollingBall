@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Scripts
+namespace Scripts
 {
     [CreateAssetMenu(fileName = "ScroreFile", menuName = "ScoreMenu", order = 0)]
     public class GameScore : ScriptableObject

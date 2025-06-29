@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Scripts.Scripts
+namespace Scripts
 {
     public class GameController : MonoBehaviour
     {
         public AudioSource soundobject;
         [SerializeField] private Button pause;
         [SerializeField] private GameObject pauseMenu;
-        [SerializeField] private GameObject roadPiece;
+        [SerializeField] private readonly GameObject roadPiece;
         [SerializeField] private Button resume;
         [SerializeField] private Button quit;
         [SerializeField] private Button restart;

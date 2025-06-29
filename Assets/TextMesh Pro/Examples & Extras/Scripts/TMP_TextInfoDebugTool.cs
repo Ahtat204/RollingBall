@@ -1,7 +1,6 @@
 ﻿using System;
-using UnityEngine;
-using System.Collections;
 using UnityEditor;
+using UnityEngine;
 
 
 namespace TMPro.Examples
@@ -17,7 +16,7 @@ namespace TMPro.Examples
         public bool ShowLines;
         public bool ShowMeshBounds;
         public bool ShowTextBounds;
-        [Space(10)] [TextArea(2, 2)] public string ObjectStats;
+        [Space(10)][TextArea(2, 2)] public string ObjectStats;
 
         [SerializeField] private TMP_Text m_TextComponent;
 

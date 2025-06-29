@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.TextCore.LowLevel;
 
 
@@ -61,35 +60,35 @@ namespace TMPro.Examples
                     case BenchmarkType.TMP_SDF__MOBILE_SSD:
                     case BenchmarkType.TMP_SDF:
                     case BenchmarkType.TMP_BITMAP_MOBILE:
-                    {
-                        var go = new GameObject();
-                        go.transform.position = new Vector3(0, 1.2f, 0);
+                        {
+                            var go = new GameObject();
+                            go.transform.position = new Vector3(0, 1.2f, 0);
 
-                        var textComponent = go.AddComponent<TextMeshPro>();
-                        textComponent.font = fontAsset;
-                        textComponent.fontSize = 128;
-                        textComponent.text = "@";
-                        textComponent.alignment = TextAlignmentOptions.Center;
-                        textComponent.color = new Color32(255, 255, 0, 255);
+                            var textComponent = go.AddComponent<TextMeshPro>();
+                            textComponent.font = fontAsset;
+                            textComponent.fontSize = 128;
+                            textComponent.text = "@";
+                            textComponent.alignment = TextAlignmentOptions.Center;
+                            textComponent.color = new Color32(255, 255, 0, 255);
 
-                        if (Benchmark == BenchmarkType.TMP_BITMAP_MOBILE)
-                            textComponent.fontSize = 132;
-                    }
+                            if (Benchmark == BenchmarkType.TMP_BITMAP_MOBILE)
+                                textComponent.fontSize = 132;
+                        }
                         break;
                     case BenchmarkType.TEXTMESH_BITMAP:
-                    {
-                        var go = new GameObject();
-                        go.transform.position = new Vector3(0, 1.2f, 0);
+                        {
+                            var go = new GameObject();
+                            go.transform.position = new Vector3(0, 1.2f, 0);
 
-                        var textMesh = go.AddComponent<TextMesh>();
-                        textMesh.GetComponent<Renderer>().sharedMaterial = SourceFont.material;
-                        textMesh.font = SourceFont;
-                        textMesh.anchor = TextAnchor.MiddleCenter;
-                        textMesh.fontSize = 130;
+                            var textMesh = go.AddComponent<TextMesh>();
+                            textMesh.GetComponent<Renderer>().sharedMaterial = SourceFont.material;
+                            textMesh.font = SourceFont;
+                            textMesh.anchor = TextAnchor.MiddleCenter;
+                            textMesh.fontSize = 130;
 
-                        textMesh.color = new Color32(255, 255, 0, 255);
-                        textMesh.text = "@";
-                    }
+                            textMesh.color = new Color32(255, 255, 0, 255);
+                            textMesh.text = "@";
+                        }
                         break;
                 }
         }

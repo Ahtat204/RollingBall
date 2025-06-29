@@ -1,8 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Scripts.Scripts
+
+namespace Scripts
 {
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
@@ -13,12 +13,12 @@ namespace Scripts.Scripts
 
         public event GameOver over;
         [SerializeField] private Button pause;
-        [Space] [SerializeField] private Button leftArrow;
-        [Space] [SerializeField] private Button rightArrow;
-        [Space] [SerializeField] private AudioSource coinUpSound;
-        [Space] [SerializeField] private AudioSource coinDownSound;
-        [Space] [SerializeField] private Button jumpButton;
-        [SerializeField] [Range(0, 200)] private float jumHeight;
+        [Space][SerializeField] private Button leftArrow;
+        [Space][SerializeField] private Button rightArrow;
+        [Space][SerializeField] private AudioSource coinUpSound;
+        [Space][SerializeField] private AudioSource coinDownSound;
+        [Space][SerializeField] private Button jumpButton;
+        [SerializeField][Range(0, 200)] private float jumHeight;
         private Rigidbody _rb;
         [Range(0, 300)] public float forwardSpeed;
         [Range(0, 100)] public float verticalSpeed;
@@ -51,5 +51,5 @@ namespace Scripts.Scripts
         }
     }
 
-   
+
 }
