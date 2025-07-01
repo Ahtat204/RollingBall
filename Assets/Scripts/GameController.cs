@@ -9,7 +9,7 @@ namespace Scripts
         public AudioSource soundobject;
         [SerializeField] private Button pause;
         [SerializeField] private GameObject pauseMenu;
-        [SerializeField] private readonly GameObject roadPiece;
+         private readonly GameObject roadPiece;
         [SerializeField] private Button resume;
         [SerializeField] private Button quit;
         [SerializeField] private Button restart;
